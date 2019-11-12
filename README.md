@@ -1,2 +1,2 @@
 # TwocanBackend
-Backend to the twocan messanger
+Backend to the twocan messenger
