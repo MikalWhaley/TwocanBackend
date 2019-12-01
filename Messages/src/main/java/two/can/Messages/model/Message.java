@@ -1,17 +1,17 @@
 package two.can.Messages.model;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
 public class Message{
 
-    private Timestamp timeStamp;
+    private Date date;
     private String userID;
     private String messageBody;
 
     public Message(){}
 
-    public Timestamp getTimeStamp() {
-        return this.timeStamp;
+    public Date getTimeStamp() {
+        return this.date;
     }
     
     public String getUserID() {
@@ -22,8 +22,8 @@ public class Message{
         return this.messageBody;
     }
 
-    public void getTimeStamp(Timestamp timeStamp) {
-        this.timeStamp = timeStamp;
+    public void getTimeStamp(Date date) {
+        this.date = date;
     }
     
     public void getUserID(String userID) {
