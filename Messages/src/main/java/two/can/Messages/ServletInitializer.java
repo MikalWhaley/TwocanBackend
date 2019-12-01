@@ -1,4 +1,4 @@
-package can.User.database.service;
+package two.can.Messages;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
