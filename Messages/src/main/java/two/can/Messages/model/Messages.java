@@ -1,9 +1,11 @@
 package two.can.Messages.model;
 
 import java.util.ArrayList;
+import org.springframework.data.annotation.Id;
 
 public class Messages {
 
+    @Id
     private String uniqID;
     private ArrayList<Message> messages;
 
