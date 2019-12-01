@@ -31,6 +31,9 @@ public class User {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
+    
     
     public ArrayList<Friends> getFriends(){
         return this.friendslist;
@@ -45,9 +48,13 @@ public class User {
     }
 
 
+
+
+
     public ArrayList<Group> getGroup(){
         return this.grouplist;
     }
+
     
     public void setGroup(ArrayList<Group> list){
         list = this.grouplist;
