@@ -5,7 +5,7 @@ import java.util.ArrayList;
 //import io.swagger.annotations.ApiModelProperty;
 import org.springframework.data.annotation.Id;
 
-public class User{
+public class User {
 
 
     @Id
@@ -41,8 +41,5 @@ public class User{
     public void addFriend(String friend){
         friendslist.add(friend);
     }
-    
-    
-    
-    
-    }
+        
+}
