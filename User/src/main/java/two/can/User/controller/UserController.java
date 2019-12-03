@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.ApiOperation;
 //import mwhaley.csumb.edu.model.Product;
 import two.can.User.model.User;
+import two.can.User.model.Friends;
+import two.can.User.model.Group;
 import two.can.User.service.UserService;;
 
 @RestController
@@ -39,6 +41,22 @@ public class UserController{
     public Iterable<User> getAllUsers() {
         return userService.getAllUsers();
     }
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/users/addFriend")
+    @ApiOperation(value = "Add someone to the friendslist" )
+    public void addFriend(String userid, Friends f) {
+        userService.addFriend(userid, f);
+    }
+
+
+    @RequestMapping(method = RequestMethod.POST, value = "/users/addGroup")
+    @ApiOperation(value = "Add people to the grouplist" )
+    public void addFriend(String userid, Group g) {
+        userService.addGroup(userid, g);
+    }
+
+
 
     
 
