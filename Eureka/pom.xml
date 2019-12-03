@@ -114,7 +114,7 @@
 					<serverId>amsa.aws</serverId>
 					<artifact>${project.build.directory}/Eureka-0.0.1-SNAPSHOT.war</artifact>
 					<applicationName>Eureka</applicationName>
-					<environmentName>SpringEureka-env</environmentName>
+					<environmentName>Twocan-env</environmentName>
 					<region>us-east-2</region>
 				</configuration>
 			</plugin>

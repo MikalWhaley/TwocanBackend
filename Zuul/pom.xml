@@ -118,7 +118,7 @@
 					<serverId>amsa.aws</serverId>
 					<artifact>${project.build.directory}/Zuul-0.0.1-SNAPSHOT.war</artifact>
 					<applicationName>Zuul</applicationName>
-					<environmentName>SpringZuul-env</environmentName>
+					<environmentName>Zuul-env</environmentName>
 					<region>us-east-2</region>
 				</configuration>
 			</plugin>
