@@ -45,8 +45,8 @@ public class UserController{
 
     @RequestMapping(method = RequestMethod.POST, value = "/users/addFriend")
     @ApiOperation(value = "Add someone to the friendslist" )
-    public void addFriend(String userid, Friends f) {
-        userService.addFriend(userid, f);
+    public void addFriend(String userid, String friendID) {
+        userService.addFriend(userid, friendID);
     }
 
 

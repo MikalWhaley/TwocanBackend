@@ -1,7 +1,6 @@
 package two.can.User.service;
 
-//import java.util.HashMap;
-//import java.util.Iterator;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,12 +27,21 @@ public class UserService {
 
         
     }
+    // the user                               the friend
+    public void addFriend(String userID, String friendID){
 
-    public void addFriend(String userID, Friends f){
+        Optional<User> temp = userRepository.findById(userID);
         
-        User user = userRepository.findById(userID).get();
-        user.addFriend(f);
+        if(userRepository.findById(friendID).isPresent() && temp.isPresent()){
 
+            User user = temp.get();
+
+            Friends friend = new Friends(friendID, userID);
+
+            user.addFriend(friend);
+        }
+        
+    
         
     }
 
