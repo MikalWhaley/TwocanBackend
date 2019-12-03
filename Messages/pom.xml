@@ -131,7 +131,7 @@
 					<serverId>amsa.aws</serverId>
 					<artifact>${project.build.directory}/messages-0.0.1-SNAPSHOT.war</artifact>
 					<applicationName>Messages</applicationName>
-					<environmentName>TwocanMessages-env</environmentName>
+					<environmentName>Messages-env</environmentName>
 					<region>us-east-2</region>
 				</configuration>
 			</plugin>
