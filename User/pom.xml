@@ -136,7 +136,7 @@
 					<serverId>amsa.aws</serverId>
 					<artifact>${project.build.directory}/users-0.0.1-SNAPSHOT.war</artifact>
 					<applicationName>Users</applicationName>
-					<environmentName>TwocanUsers-env</environmentName>
+					<environmentName>Users-env</environmentName>
 					<region>us-east-2</region>
 				</configuration>
 			</plugin>
