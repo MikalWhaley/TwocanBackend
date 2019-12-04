@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - UserApplication",
+            "request": "launch",
+            "mainClass": "two.can.User.UserApplication",
+            "projectName": "User"
+        }
+    ]
+}

@@ -2,8 +2,9 @@ package two.can.User.model;
 
 import java.util.ArrayList;
 
-//import io.swagger.annotations.ApiModelProperty;
 import org.springframework.data.annotation.Id;
+
+import io.swagger.annotations.ApiModelProperty;
 
 public class User {
 
@@ -11,8 +12,12 @@ public class User {
     @Id
     String username;
     String password;
-    //@ApiModelProperty(required = false, hidden = true)
+    String email;
+    
+    @ApiModelProperty(required = false, hidden = true)
     ArrayList<Friends> friendslist = new ArrayList<Friends>();//friends list
+
+    @ApiModelProperty(required = false, hidden = true)
     ArrayList<Group> grouplist = new ArrayList<Group>();//group list
 
     
@@ -33,8 +38,6 @@ public class User {
     }
 
 
-    
-    
     public ArrayList<Friends> getFriends(){
         return this.friendslist;
     }
@@ -44,12 +47,9 @@ public class User {
     }
     
     public void addFriend(Friends friend){
+
         friendslist.add(friend);
     }
-
-
-
-
 
     public ArrayList<Group> getGroup(){
         return this.grouplist;
