@@ -4,15 +4,19 @@ import java.util.ArrayList;
 
 import org.springframework.data.annotation.Id;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
+
+@ApiModel
 public class User {
 
 
     @Id
-    String username;
-    String password;
-    String email;
+    private String username;
+    private String password;
+    private String email;
+
     
     @ApiModelProperty(required = false, hidden = true)
     ArrayList<Friends> friendslist = new ArrayList<Friends>();//friends list
@@ -62,6 +66,14 @@ public class User {
     
     public void addGroup(Group group){
         grouplist.add(group);
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
         
 }
