@@ -6,14 +6,16 @@ public class Friends{
 
     String username;
     String uid;
-    //              friend you're adding    your username
-    public Friends(String frienduser, String username){
-        this.username = frienduser;
 
+    public Friends() {}
+
+    //              friend you're adding    your username
+    public Friends(String frienduser, String username) {
+
+        this.username = frienduser;
         int compare = username.compareTo(frienduser);
 
-
-        if(compare < 0){
+        if(compare <= 0){
             uid = username + frienduser;
         }else if(compare > 0){
             uid = frienduser + username;

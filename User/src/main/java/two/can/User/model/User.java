@@ -24,7 +24,8 @@ public class User {
     @ApiModelProperty(required = false, hidden = true)
     ArrayList<Group> grouplist;
 
-    
+    public User() {}
+
     public String getUsername() {
         return this.username;
     }
@@ -79,7 +80,6 @@ public class User {
             grouplist = new ArrayList<Group>();
             grouplist.add(group);
             return;
-        
         } 
 
         grouplist.add(group);
