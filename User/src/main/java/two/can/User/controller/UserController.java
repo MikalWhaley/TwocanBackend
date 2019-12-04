@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.ApiOperation;
 //import mwhaley.csumb.edu.model.Product;
 import two.can.User.model.User;
-import two.can.User.model.Friends;
 import two.can.User.model.Group;
 import two.can.User.service.UserService;;
 

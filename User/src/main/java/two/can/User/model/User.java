@@ -51,10 +51,6 @@ public class User {
         friendslist.add(friend);
     }
 
-
-
-
-
     public ArrayList<Group> getGroup(){
         return this.grouplist;
     }
