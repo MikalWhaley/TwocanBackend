@@ -51,7 +51,7 @@ public class UserController{
 
     @RequestMapping(method = RequestMethod.POST, value = "/users/addGroup")
     @ApiOperation(value = "Add people to the grouplist" )
-    public void addFriend(String userid, Group g) {
+    public void addGroup(String userid, Group g) {
         userService.addGroup(userid, g);
     }
 
