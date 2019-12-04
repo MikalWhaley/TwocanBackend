@@ -3,7 +3,6 @@ package two.can.User.model;
 
 public class Friends{
 
-
     String username;
     String uid;
 
@@ -17,11 +16,11 @@ public class Friends{
 
         if(compare <= 0){
             uid = username + frienduser;
-        }else if(compare > 0){
+        } else {
             uid = frienduser + username;
         }
-
     }
+
     public String getUsername() {
         return this.username;
     }
@@ -37,5 +36,4 @@ public class Friends{
     public void setUid(String uid) {
         this.uid = uid;
     }
-
 }

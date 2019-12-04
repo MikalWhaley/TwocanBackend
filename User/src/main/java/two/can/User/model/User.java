@@ -11,7 +11,6 @@ import io.swagger.annotations.ApiModelProperty;
 @ApiModel
 public class User {
 
-
     @Id
     private String username;
     private String password;
@@ -42,16 +41,23 @@ public class User {
         this.password = password;
     }
 
+    public String getEmail() {
+        return this.email;
+    }
 
-    public ArrayList<Friends> getFriends(){
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public ArrayList<Friends> getFriends() {
         return this.friendslist;
     }
     
-    public void setFriends(ArrayList<Friends> list){
+    public void setFriends(ArrayList<Friends> list) {
         this.friendslist = list;
     }
     
-    public void addFriend(Friends friend){
+    public void addFriend(Friends friend) {
 
         if(friendslist == null) {
             
@@ -64,16 +70,16 @@ public class User {
         friendslist.add(friend);
     }
 
-    public ArrayList<Group> getGroup(){
+    public ArrayList<Group> getGroup() {
         return this.grouplist;
     }
 
     
-    public void setGroup(ArrayList<Group> list){
+    public void setGroup(ArrayList<Group> list) {
         this.grouplist = list;
     }
     
-    public void addGroup(Group group){
+    public void addGroup(Group group) {
         
         if(grouplist == null) {
             
@@ -84,13 +90,4 @@ public class User {
 
         grouplist.add(group);
     }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-        
 }
