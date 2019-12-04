@@ -6,7 +6,7 @@ public class Friends{
 
     String username;
     String uid;
-    //              friend you're adding    youre username
+    //              friend you're adding    your username
     public Friends(String frienduser, String username){
         this.username = frienduser;
 

@@ -19,10 +19,10 @@ public class User {
 
     
     @ApiModelProperty(required = false, hidden = true)
-    ArrayList<Friends> friendslist = new ArrayList<Friends>();//friends list
+    ArrayList<Friends> friendslist;
 
     @ApiModelProperty(required = false, hidden = true)
-    ArrayList<Group> grouplist = new ArrayList<Group>();//group list
+    ArrayList<Group> grouplist;
 
     
     public String getUsername() {
@@ -47,10 +47,18 @@ public class User {
     }
     
     public void setFriends(ArrayList<Friends> list){
-        list = this.friendslist;
+        this.friendslist = list;
     }
     
     public void addFriend(Friends friend){
+
+        if(friendslist == null) {
+            
+            friendslist = new ArrayList<Friends>();
+            friendslist.add(friend);
+            return;
+        
+        } 
 
         friendslist.add(friend);
     }
@@ -61,10 +69,19 @@ public class User {
 
     
     public void setGroup(ArrayList<Group> list){
-        list = this.grouplist;
+        this.grouplist = list;
     }
     
     public void addGroup(Group group){
+        
+        if(grouplist == null) {
+            
+            grouplist = new ArrayList<Group>();
+            grouplist.add(group);
+            return;
+        
+        } 
+
         grouplist.add(group);
     }
 
