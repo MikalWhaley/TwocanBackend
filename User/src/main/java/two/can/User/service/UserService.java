@@ -50,6 +50,7 @@ public class UserService {
         
         User user = userRepository.findById(userID).get();
         user.addGroup(g);
+        userRepository.save(user);
 
         
     }
