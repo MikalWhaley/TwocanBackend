@@ -39,6 +39,7 @@ public class UserService {
             Friends friend = new Friends(friendID, userID);
 
             user.addFriend(friend);
+            userRepository.save(user);
         }
         
     
