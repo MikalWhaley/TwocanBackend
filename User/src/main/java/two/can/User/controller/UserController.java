@@ -82,7 +82,7 @@ public class UserController{
 
     @RequestMapping(method = RequestMethod.GET, value = "/users/getGroups")
     @ApiOperation(value = "return user grouplist" )
-    public ArrayList<Group> getGroupList(String userID) {
+    public ArrayList<two.can.User.model.Group> getGroupList(String userID) {
         return userService.getGroupList(userID);
     }
     
