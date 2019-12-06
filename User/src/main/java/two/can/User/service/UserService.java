@@ -101,6 +101,29 @@ public class UserService {
         return false;
 
     }
+
+    // public Boolean removeFriend(String userID, String friendID){
+
+    //     Optional<User> temp = userRepository.findById(userID);
+
+    //     if(temp.isPresent() ){
+
+    //     }
+    // }
+
+    public Boolean removeUser(String userID){
+
+        Optional<User> temp = userRepository.findById(userID);
+
+        if(temp.isPresent()){
+            User user = temp.get();
+            userRepository.delete(user);
+            return true;
+        }else{
+            return false;
+        }
+        
+    }
     
 
 }
