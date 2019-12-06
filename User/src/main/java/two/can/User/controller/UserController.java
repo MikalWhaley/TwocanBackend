@@ -58,6 +58,13 @@ public class UserController{
     }
 
 
+    @RequestMapping(method = RequestMethod.DELETE, value = "/users/removeUser")
+    @ApiOperation(value = "remove people to the database" )
+    public Boolean removeUser(String userid) {
+        return userService.removeUser(userid);
+    }
+
+
 
     
 
