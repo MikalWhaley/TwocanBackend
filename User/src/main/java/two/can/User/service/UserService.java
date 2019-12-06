@@ -91,9 +91,9 @@ public class UserService {
         if(isListValid(g) && temp.isPresent() ){
             User user = temp.get();
             user.addGroup(g);
-            for(int i =0; i<g.getListSize(); i++){
-                System.out.print(g.getNameAtIndex(i));
-            }
+            // for(int i =0; i<g.getListSize(); i++){
+            //     System.out.print(g.getNameAtIndex(i));
+            // }
            
             userRepository.save(user);
             return true;
@@ -102,14 +102,19 @@ public class UserService {
 
     }
 
-    // public Boolean removeFriend(String userID, String friendID){
+    public Boolean removeFriend(String userID, String friendID){
 
-    //     Optional<User> temp = userRepository.findById(userID);
+        Optional<User> temp = userRepository.findById(userID);
 
-    //     if(temp.isPresent() ){
-
-    //     }
-    // }
+        if(temp.isPresent()){
+            User user = temp.get();
+            user.removeFriend(friendID);
+            userRepository.save(user);
+            return true;
+        }else{
+            return false;
+        }
+    }
 
     public Boolean removeUser(String userID){
 
@@ -125,5 +130,48 @@ public class UserService {
         
     }
     
+    public Boolean login(String userID, String password){
+
+        Optional<User> temp = userRepository.findById(userID);
+
+        if(temp.isPresent()){
+            User user = temp.get();
+            if(user.getPassword().equals(password)){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
+    //get friends list
+    //get groups list
+    //remove group
+
+    public ArrayList<Friends> getFriendList(String userID){
+        Optional<User> temp = userRepository.findById(userID);
+
+        if(temp.isPresent()){
+            User user = temp.get();
+            return user.getFriends();
+
+        }else{
+            return new ArrayList<Friends>();
+        }
+    }
+
+
+    public ArrayList<Group> getGroupList(String userID){
+        Optional<User> temp = userRepository.findById(userID);
+
+        if(temp.isPresent()){
+            User user = temp.get();
+            return user.getGroup();
+
+        }else{
+            return new ArrayList<Group>();
+        }
+    }
 
 }

@@ -1,12 +1,8 @@
 package two.can.User.controller;
-//import java.util.Arrays;
 
 import java.util.ArrayList;
 
-//import java.util.List;
-
-//import java.util.Optional;
-
+import com.amazonaws.services.identitymanagement.model.Group;
 import org.springframework.beans.factory.annotation.Autowired;
 //import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -19,7 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.ApiOperation;
 //import mwhaley.csumb.edu.model.Product;
 import two.can.User.model.User;
-import two.can.User.model.Group;
+import two.can.User.model.Friends;
+//import two.can.User.model.Group;
+
 import two.can.User.service.UserService;;
 
 @RestController
@@ -64,8 +62,29 @@ public class UserController{
         return userService.removeUser(userid);
     }
 
+    @RequestMapping(method = RequestMethod.DELETE, value = "/users/removeFriend")
+    @ApiOperation(value = "remove friend from user" )
+    public Boolean removeFriend(String userID, String friendID) {
+        return userService.removeFriend(userID, friendID);
+    }
 
+    @RequestMapping(method = RequestMethod.POST, value = "/users/login")
+    @ApiOperation(value = "verify user credientials" )
+    public Boolean login(String userID, String password) {
+        return userService.login(userID, password);
+    }
 
+    @RequestMapping(method = RequestMethod.GET, value = "/users/getFriends")
+    @ApiOperation(value = "return user friendslist" )
+    public ArrayList<Friends> getFriendsList(String userID) {
+        return userService.getFriendList(userID);
+    }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/users/getGroups")
+    @ApiOperation(value = "return user grouplist" )
+    public ArrayList<Group> getGroupList(String userID) {
+        return userService.getGroupList(userID);
+    }
     
 
 }

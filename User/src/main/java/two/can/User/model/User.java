@@ -92,4 +92,13 @@ public class User {
 
         grouplist.add(group);
     }
+
+    public void removeFriend(String friendID){
+
+        for(int i = 0; i < friendslist.size();i++){
+            if(friendslist.get(i).getUsername().equals(friendID)){
+                friendslist.remove(i);
+            }
+        }
+    }
 }
