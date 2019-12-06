@@ -1,6 +1,8 @@
 package two.can.User.controller;
 //import java.util.Arrays;
 
+import java.util.ArrayList;
+
 //import java.util.List;
 
 //import java.util.Optional;
@@ -51,8 +53,8 @@ public class UserController{
 
     @RequestMapping(method = RequestMethod.POST, value = "/users/addGroup")
     @ApiOperation(value = "Add people to the grouplist" )
-    public void addGroup(String userid, Group g) {
-        userService.addGroup(userid, g);
+    public Boolean addGroup(String userid, @RequestBody ArrayList<String> a) {
+        return userService.addGroup(userid, a);
     }
 
 

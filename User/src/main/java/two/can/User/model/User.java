@@ -8,6 +8,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 
+
 @ApiModel
 public class User {
 
@@ -18,10 +19,11 @@ public class User {
 
     
     @ApiModelProperty(required = false, hidden = true)
-    ArrayList<Friends> friendslist;
+    private ArrayList<Friends> friendslist;
 
+    
     @ApiModelProperty(required = false, hidden = true)
-    ArrayList<Group> grouplist;
+    private ArrayList<Group> grouplist;
 
     public User() {}
 

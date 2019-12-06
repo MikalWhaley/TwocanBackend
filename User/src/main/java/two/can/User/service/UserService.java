@@ -1,5 +1,6 @@
 package two.can.User.service;
 
+import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,13 +47,59 @@ public class UserService {
         
     }
 
-    public void addGroup(String userID, Group g){
-        
-        User user = userRepository.findById(userID).get();
-        user.addGroup(g);
-        userRepository.save(user);
+    public boolean isListValid(Group g){
 
+        ArrayList<String> a = g.getList();
+
+        for(int i = 0; i < a.size(); i++){
+            if(!userRepository.findById(a.get(i)).isPresent()){
+                return false;
+            }
+        }
+
+        return true;
+
+        /*
         
+
+        Boolean valid = true;
+    
+        for(int i = 0; i < g.getListSize(); i++){
+            if(userRepository.findById(g.getNameAtIndex(i)).isPresent()){
+                valid = true;
+            }else{
+                valid = false;
+                return valid;
+            }
+    
+        }
+        return valid;
+ */
+    
+    }
+
+
+    public Boolean addGroup(String userID, ArrayList<String> a){
+
+        // System.out.print(userID);
+        
+        // System.out.print(a.get(0));
+        
+        Group g = new Group(a);
+        Optional<User> temp = userRepository.findById(userID);
+
+        if(isListValid(g) && temp.isPresent() ){
+            User user = temp.get();
+            user.addGroup(g);
+            for(int i =0; i<g.getListSize(); i++){
+                System.out.print(g.getNameAtIndex(i));
+            }
+           
+            userRepository.save(user);
+            return true;
+        }
+        return false;
+
     }
     
 
