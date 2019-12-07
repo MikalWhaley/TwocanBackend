@@ -1,7 +1,6 @@
 package two.can.Messages.controller;
 
 import two.can.Messages.model.Message;
-import two.can.Messages.model.Messages;
 import two.can.Messages.service.MessagesService;
 
 import java.util.ArrayList;
@@ -10,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-//import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import io.swagger.annotations.ApiOperation;
@@ -21,7 +19,7 @@ public class MessagesController {
     @Autowired
     MessagesService messagesService;
 
-    @RequestMapping(method = RequestMethod.POST, value = "/messages/addMessage")
+    @RequestMapping(method = RequestMethod.POST, value = "/messages/addConversation")
     @ApiOperation(value = "Adds a new converation to the database")
     public String addConversation(String uniqID) {
 
