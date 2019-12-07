@@ -11,6 +11,15 @@ public class Messages {
 
     public Messages(){}
 
+    public Messages(String uniqID) {
+        this.uniqID = uniqID;
+    }
+
+    public Messages(String uniqID, ArrayList<Message> messages) {
+        this.uniqID = uniqID;
+        this.messages = messages;
+    }
+
     public String getUniqID() {
         return this.uniqID;
     }
