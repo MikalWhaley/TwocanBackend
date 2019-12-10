@@ -53,14 +53,14 @@ public class UserController{
     }
 
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/users/removeUser")
+    @RequestMapping(method = RequestMethod.POST, value = "/users/removeUser")
     @ApiOperation(value = "remove people to the database" )
     public Boolean removeUser(String userid) {
 
         return userService.removeUser(userid);
     }
 
-    @RequestMapping(method = RequestMethod.DELETE, value = "/users/removeFriend")
+    @RequestMapping(method = RequestMethod.POST, value = "/users/removeFriend")
     @ApiOperation(value = "remove friend from user" )
     public Boolean removeFriend(String userID, String friendID) {
 

@@ -68,8 +68,10 @@ public class User {
             return;
         
         } 
-
-        friendslist.add(friend);
+        if(!friendslist.contains(friend)){
+            friendslist.add(friend);
+        }
+        
     }
 
     public ArrayList<Group> getGroup() {
