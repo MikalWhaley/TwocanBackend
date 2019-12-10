@@ -86,4 +86,10 @@ public class UserController{
 
         return userService.getGroupList(userID);
     }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/users/changePassword")
+    @ApiOperation(value = "Changes a user's password" )
+    public Boolean login(String userID, String oldPassword, String newPassword ) {
+        return userService.changePassword(userID, oldPassword, newPassword);
+    }
 }

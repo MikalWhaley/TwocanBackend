@@ -35,7 +35,7 @@ public class UserService {
 
         Optional<User> temp = userRepository.findById(userID);
         
-        if(userRepository.findById(friendID).isPresent() && temp.isPresent()){
+        if(userRepository.findById(friendID).isPresent() && temp.isPresent()) {
 
             User user = temp.get();
 
@@ -47,7 +47,7 @@ public class UserService {
     }
 
 
-    public boolean isListValid(Group g){
+    public boolean isListValid(Group g) {
 
         ArrayList<String> a = g.getList();
 
@@ -112,7 +112,7 @@ public class UserService {
         }
     }
     
-    public Boolean login(String userID, String password){
+    public Boolean login(String userID, String password) {
 
         Optional<User> temp = userRepository.findById(userID);
 
@@ -159,5 +159,24 @@ public class UserService {
 
             return new ArrayList<Group>();
         }
+    }
+
+
+    public Boolean changePassword(String userID, String oldPassword, String newPassword) {
+
+        Optional<User> temp = userRepository.findById(userID);
+
+        if(temp.isPresent()) {
+
+            User user = temp.get();
+            if(user.getPassword().equals(oldPassword)) {
+             
+                user.setPassword(newPassword);
+                userRepository.save(user);
+                return true;
+            }
+        }
+
+        return false;
     }
 }
