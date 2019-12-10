@@ -10,6 +10,12 @@ public class Message{
 
     public Message(){}
 
+    public Message(String userID, String messageBody) {
+        this.date = new Date();
+        this.userID = userID;
+        this.messageBody = messageBody;
+    }
+
     public Date getTimeStamp() {
         return this.date;
     }

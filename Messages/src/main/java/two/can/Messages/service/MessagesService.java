@@ -26,7 +26,9 @@ public class MessagesService {
     }
 
 
-    public void addMessage(String uniqID, Message message) {
+    public void addMessage(String uniqID, String userID, String text) {
+
+        Message message = new Message(userID, text);
 
         Optional<Messages> temp = messagesRepository.findById(uniqID);
 

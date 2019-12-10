@@ -32,9 +32,9 @@ public class MessagesController {
 
     @RequestMapping(method = RequestMethod.POST, value = "/messages/addMessage")
     @ApiOperation(value = "Adds a message to a conversation, if the conversation does not exist, it will be created.")
-    public String add(String uniqID, @RequestBody Message message) {
+    public String add(String uniqID, String userID, String text) {
 
-        messagesService.addMessage(uniqID, message);
+        messagesService.addMessage(uniqID, userID, text);
 
         return "Message added to Conversation ID " + uniqID;
     }
